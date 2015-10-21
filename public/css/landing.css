@@ -1,0 +1,61 @@
+input,button, h1,h2,h3,h4,h5
+{
+	color: #35B0F2 ;
+	font-family: 'Open Sans', sans-serif;
+}
+button 
+{
+	font-family: 'Open Sans', sans-serif;
+}
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+h1,form{
+	padding: 15px;
+}
+nav 
+{
+	
+	width: 100%;
+	height: 90px;
+	background-color: #5C6062;
+	
+}
+.container
+{
+	margin: auto;
+	width: 100%;
+	height: 85%;
+	background-color: #;
+
+}
+
+#textinput
+{
+	width: 200px;
+	height: 30px;
+	display: inline;
+}
+#signin_btn
+{
+	height: 30px;
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 3px;
+
+}
+
+.failed_alert
+{
+	width: 100%;
+	height: 50px;
+	background-color: #FFC2C2;
+	text-align: center;
+	color: #FF3333;
+}
+
+.failed_alert p
+{
+	padding: 15px;
+}
