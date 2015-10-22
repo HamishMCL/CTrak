@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>CTrak <span  style="color:">R.</span> </title>
+	<title>CTrak</title>
 	<link rel="shortcut icon" href="/CTrak/Images/Ball-Favicon.png">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/landing.css') }}">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -28,8 +28,8 @@
 	<div class="container">
 
 
-		<h1 style="padding: 20px; margin: auto; text-align: center; font-size: 50px; color:  ; font-family: 'Open Sans', sans-serif;">CTrak</h1>
-		<h1 style="padding: 20px; margin: auto; text-align: center; color: #35B0F2 ; font-family: 'Open Sans', sans-serif;">Sign Up.</h1>
+		<h1 style="padding: 20px; margin: auto; text-align: center; font-size: 50px; color:  ; font-family: 'Open Sans', sans-serif;">CTrakR</h1>
+		<h1 style="padding: 20px; margin: auto; text-align: center; color: #35B0F2 ; font-family: 'Open Sans', sans-serif;">Sign Up</h1>
 
 		<form class="form-horizontal"  role="form" method="POST" action="{{ route('landingpage') }}" style=" margin: auto;display: block; width: 50%;text-align: center;">
 
