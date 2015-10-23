@@ -11,13 +11,13 @@ class PagesController extends Controller
 {
     public function landingpage() {
 
-    	return view('landing_page');
+    	return view('pages.signup');
 
     }
 
     public function dashboard() {
 
-        return view('dashboard');
+        return view('pages.new_innings');
     }
 
     public function newinnings() {
