@@ -1,5 +1,12 @@
 @extends('landing_page')
-
+@section('nav')
+	<h2 style="margin: 0px; padding: 5px; display: inline-block; text-align: center; color: #484848;padding: 15px;">CTrak</h2>
+		<ul>
+			<li><a href="{{ route('stats') }}">Your stats</a></li>
+			<li><a href="{{ route('newinnings') }}">New Innings</a></li>
+			<li><a href="{{ route('landingpage') }}">Log out</a></li>
+		</ul>
+@stop
 @section('content')
 
 	<h1 style="margin-left: 15px;">New Innings</h1>
@@ -8,7 +15,7 @@
 		<form class="form-horizontal"  role="form" method="POST" action="{{ route('landingpage') }}" style=" margin-left: 15px;width: 15%;">
 
 			
-				<h3 style="text-decoration: underline; color: blue;">Batting</h3>
+				<h3 style="text-decoration: underline; ">Batting</h3>
 			 	<h4>Runs</h4>   
 			  	<input id="textinput" style="padding:0px;margin:0px;" name="textinput" type="text" class="form-control input-md">
 			
@@ -47,7 +54,7 @@
 
 
 
-				<h3 style="text-decoration: underline; color: blue;">Bowling</h3>
+				<h3 style="text-decoration: underline;;">Bowling</h3>
 				 	<h4>Wickets</h4> 
 			  	<input id="textinput" style="padding:0px;margin:0px;" name="textinput" type="text" class="form-control input-md">
 			  	 	<h4>Runs conceded</h4> 
@@ -57,7 +64,7 @@
 			  	 	<h4>Maidens</h4> 
 			  	<input id="textinput" style="padding:0px;margin:0px;" name="textinput" type="text" class="form-control input-md">
 
-			  	<h3 style="text-decoration: underline; color: blue;">Feilding</h3>
+			  	<h3 style="text-decoration: underline;">Feilding</h3>
 			  	  	 	<h4>Catches</h4> 
 			  	<input id="textinput" style="padding:0px;margin:0px;" name="textinput" type="text" class="form-control input-md">
 			  	  	 	<h4>Run outs</h4> 

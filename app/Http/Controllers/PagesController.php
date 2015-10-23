@@ -17,7 +17,7 @@ class PagesController extends Controller
 
     public function dashboard() {
 
-        return view('pages.new_innings');
+        return view('pages.stats');
     }
 
     public function newinnings() {
@@ -25,7 +25,10 @@ class PagesController extends Controller
         return view('pages.new_innings');
     }
 
-
+     public function getStats()
+    {
+        return view('pages.stats');
+    }
 
     public function settings()
     {

@@ -1,9 +1,28 @@
 @extends('landing_page')
+	
+
+
+
+@section('nav')
+			
+	<form role="form" method="" action="{{ route('dashboard') }}" style="padding: 20px; margin: px;display: inline; float: right;">
+		
+
+				<input id="textinput" name="textinput" placeholder="USERNAME" type="text" class="form-control">
+			
+				 <input id="textinput" name="textinput"  placeholder="PASSWORD" type="text" class="form-control">
+				 <button  id="signin_btn"type="submit" class="btn btn-primary">Sign in</button>
+		
+
+				<input type="hidden" name="_token" value="{{Session::token() }}"></input>
+			</form>
+@stop
+
 
 
 @section('content')
 
-		<h1 style="padding: 20px; margin: auto; text-align: center; font-size: 50px; color:  ; font-family: 'Open Sans', sans-serif;">CTrakR</h1>
+		<h1 style="padding: 20px; margin: auto; text-align: center; font-size: 50px; color:  ; font-family: 'Open Sans', sans-serif;">CTrakr.</h1>
 		<h1 style="padding: 20px; margin: auto; text-align: center; color: #35B0F2 ; font-family: 'Open Sans', sans-serif;">Sign Up</h1>
 
 		<form class="form-horizontal"  role="form" method="POST" action="{{ route('landingpage') }}" style=" margin: auto;display: block; width: 50%;text-align: center;">

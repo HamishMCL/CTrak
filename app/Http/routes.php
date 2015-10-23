@@ -39,3 +39,9 @@ Route::get('/settings',[
 		'as' => 'settings',
 
 	]);
+
+Route::get('/stats',[
+		'uses' => 'PagesController@getStats',
+		'as' => 'stats',
+
+	]);

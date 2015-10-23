@@ -9,30 +9,17 @@
 <body>
 
 	<nav>
-		<div class="container">
-				<form role="form" method="" action="{{ route('dashboard') }}" style="padding: 20px; margin: 10px;display: inline; float: right;">
 		
-				<!-- <label for="username">Username</label> -->
-				<input id="textinput" name="textinput" placeholder="USERNAME" type="text" class="form-control">
-				<!-- <input type="text" id="username" value=""></input> -->
-				<!-- <label for="password">Password</label> -->
-				<!-- <input type="password" id="password" value=""></input> -->
-				 <input id="textinput" name="textinput"  placeholder="PASSWORD" type="text" class="form-control">
-				 <button  id="signin_btn"type="submit" class="btn btn-primary">Sign in</button>
-				<!-- <input type="submit" value="Sign in"> </input> -->
-
-				<input type="hidden" name="_token" value="{{Session::token() }}"></input>
-			</form>
 			@yield('nav')
-		</div>
+		
 		
 	
 	</nav>
 	@include('alerts.failed')
-	<div class="container">
+	
 
 		@yield('content')
 
-	</div>
+	
 </body>
 </html>
