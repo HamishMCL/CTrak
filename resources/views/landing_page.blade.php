@@ -9,7 +9,7 @@
 <body>
 
 	<nav>
-			<form role="form" method="" action="{{ route('dashboard') }}" style="padding: 20px; margin: 10px;display: inline; float: right;">
+			<form role="form" method="" action="{{ route('landingpage') }}" style="padding: 20px; margin: 10px;display: inline; float: right;">
 		
 				<!-- <label for="username">Username</label> -->
 				<input id="textinput" name="textinput" placeholder="USERNAME" type="text" class="form-control">

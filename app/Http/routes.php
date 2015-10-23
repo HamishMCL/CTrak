@@ -13,7 +13,7 @@ Route::get('/', [
 	'as' => 'landingpage',
 	]);
 Route::post('/',[ 
-	'uses' => 'PagesController@store',
+	'uses' => 'PagesController@test',
 	]);
 
 /*

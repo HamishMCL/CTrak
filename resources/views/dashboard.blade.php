@@ -7,17 +7,16 @@
 </head>
 <body>
 
-
-<div id="side_nav">
+<nav>
 	<h2 style="margin: 0px; padding: 5px; display: block; text-align: center; color: black;">CTrak</h2>
 	<ul>
 		<li><a href="{{ route('newinnings') }}">New Innings</a></li>
 		<li><a href="{{ route('settings') }}">Settings</a></li>
 		<li><a href="{{ route('landingpage') }}">Log out</a></li>
 	</ul>
-</div>
+</nav>
 
-<div id="content">
+<div>
 	@yield('content')
 
 </div>

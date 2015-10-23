@@ -32,6 +32,11 @@ class PagesController extends Controller
         return view('pages.settings');
     }
 
+    public function test()
+    {
+        return redirect()->route('landingpage')->with('failed','');
+    }
+
 
 
 
