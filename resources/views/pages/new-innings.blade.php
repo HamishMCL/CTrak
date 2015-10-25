@@ -3,16 +3,16 @@
 	<h2 style="margin: 0px; padding: 5px; display: inline-block; text-align: center; color: #484848;padding: 15px;">CTrak</h2>
 		<ul>
 			<li><a href="{{ route('stats') }}">Your stats</a></li>
-			<li><a href="{{ route('newinnings') }}">New Innings</a></li>
+			<li><a href="{{ route('new-innings') }}">New Innings</a></li>
 			<li><a href="{{ route('landingpage') }}">Log out</a></li>
 		</ul>
 @stop
 @section('content')
-
+<div class="stats-container">
 	<h1 style="margin-left: 15px;">New Innings</h1>
 
 
-		<form class="form-horizontal"  role="form" method="POST" action="{{ route('landingpage') }}" style=" margin-left: 15px;width: 15%;">
+		<form class="form-horizontal"  role="form" method="POST" action="{{ route('new-innings') }}" style=" margin-left: 15px;width: 15%;">
 
 			
 				<h3 style="text-decoration: underline; ">Batting</h3>
@@ -36,21 +36,7 @@
 					  <label><input type="radio" name="optradio">No</label>
 				</div>
 
-				<h4>How out</h4>
-				<div class="form-group">
-			
-				  <select style="margin-left: 15px;" class="form-control" id="sel1">
-				    <option>Bowled</option>
-				    <option>Caught</option>
-				    <option>Lbw</option>
-				    <option>Run out</option>
-				    <option>Stumped</option>
-				    <option>Hit wicket</option>
-				    <option>Handled the ball</option>
-				    <option>Obstructing the feild</option>
-				    <option>Timed out</option>
-				  </select>
-				</div>
+	
 
 
 
@@ -74,4 +60,5 @@
 			   <button  id="signin_btn"type="submit"  style="margin-top: 5px; width: 260px;"class="btn btn-primary"><p>Submit</p></button>
 			   <input type="hidden" name="_token" value="{{Session::token() }}"></input>
 		</form>
+</div>
 @stop

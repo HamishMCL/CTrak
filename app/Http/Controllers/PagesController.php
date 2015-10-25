@@ -20,10 +20,22 @@ class PagesController extends Controller
         return view('pages.stats');
     }
 
+    
+
     public function newinnings() {
 
-        return view('pages.new_innings');
+        return view('pages.new-innings');
     }
+
+    public function storeNewInnings()
+    {
+        return redirect()->route('stats')->with('success','Your stats have been updated!');
+    }
+
+
+
+
+
 
      public function getStats()
     {
@@ -37,7 +49,7 @@ class PagesController extends Controller
 
     public function test()
     {
-        return redirect()->route('landingpage')->with('failed','');
+        return redirect()->route('landingpage')->with('success','');
     }
 
 

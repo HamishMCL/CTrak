@@ -16,6 +16,7 @@
 	
 	</nav>
 	@include('alerts.failed')
+	@include('alerts.success')
 	
 
 		@yield('content')

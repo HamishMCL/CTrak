@@ -3,7 +3,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes for the landing pages posting logins & getting the page
+| Routes for the landing page, posting logins & getting the page
 |--------------------------------------------------------------------------
 |
 */
@@ -18,7 +18,7 @@ Route::post('/',[
 
 /*
 |--------------------------------------------------------------------------
-| Routes for the dashboard
+| Routes for getting the dashboard
 |--------------------------------------------------------------------------
 |
 */
@@ -29,11 +29,24 @@ Route::get('/dashboard',[
 	
 	]);
 
+/*
+|--------------------------------------------------------------------------
+| Routes for new-innings pages and storing new innings in the database
+|--------------------------------------------------------------------------
+|
+*/
+
 Route::get('/new-innings',[
 		'uses' => 'PagesController@newinnings',
-		'as' => 'newinnings',
+		'as' => 'new-innings',
 
 	]);
+Route::post('/new-innings',[
+	'uses' => 'PagesController@storeNewInnings',
+
+	]);
+
+
 Route::get('/settings',[
 		'uses' => 'PagesController@settings',
 		'as' => 'settings',
