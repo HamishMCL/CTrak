@@ -14,6 +14,7 @@
 <div class="stats-container">
 
 <h1 >Stats</h1>
+<hr >
 
 <div class="stats">
 

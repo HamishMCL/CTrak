@@ -13,7 +13,7 @@ Route::get('/', [
 	'as' => 'landingpage',
 	]);
 Route::post('/',[ 
-	'uses' => 'PagesController@test',
+	'uses' => 'PagesController@signUp',
 	]);
 
 /*
@@ -24,6 +24,7 @@ Route::post('/',[
 */
 
 Route::get('/dashboard',[
+
 		'uses' => 'PagesController@dashboard',
 		'as' =>  'dashboard',
 	
