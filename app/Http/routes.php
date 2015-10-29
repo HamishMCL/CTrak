@@ -13,8 +13,14 @@ Route::get('/', [
 	'as' => 'landingpage',
 	]);
 Route::post('/',[ 
-	'uses' => 'PagesController@signUp',
+	'uses' => 'PagesController@signIn',
 	]);
+
+
+// Route::post('/landingpage/{id}',[ 
+// 	'uses' => 'PagesController@signIn',
+// 	'as' => 'test',
+// 	]);
 
 /*
 |--------------------------------------------------------------------------

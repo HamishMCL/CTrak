@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use CTrak\Http\Requests;
 use CTrak\Http\Controllers\Controller;
 use CTrak\User;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -51,7 +52,7 @@ class PagesController extends Controller
          ->with('success','');
     }
 
-    public function signIn()
+    public function signIn(Request $request)
     {
         // if(Auth::attempt(['username' => $username, 'password' => $password]))
         // {
@@ -62,6 +63,11 @@ class PagesController extends Controller
         {
             dd('failed');
         }
+        
+            return redirect()
+         ->route('dashboard');
+        
+    
     }
 /*
 |--------------------------------------------------------------------------

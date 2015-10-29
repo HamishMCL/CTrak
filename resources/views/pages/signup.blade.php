@@ -5,7 +5,7 @@
 
 @section('nav')
 			
-	<form role="form" method="" action="{{ route('stats') }}" style="padding: 20px; margin: px;display: inline; float: right;">
+	<form role="form" method="POST" action=" {{ route('landingpage') }} " style="padding: 20px; margin: px;display: inline; float: right;">
 		
 
 				<input id="textinput" name="textinput" placeholder="USERNAME" type="text" class="form-control">
