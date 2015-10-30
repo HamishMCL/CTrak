@@ -52,20 +52,28 @@ class PagesController extends Controller
          ->with('success','');
     }
 
+    public function test()
+    {
+        
+    }
+
     public function signIn(Request $request)
     {
-        // if(Auth::attempt(['username' => $username, 'password' => $password]))
-        // {
-        //     dd('passed')
-        // }
+         $this->validate($request,[
+            'username' => 'required',
+            'password' => 'required',
 
-        if(!Auth::attempt($request->only(['username','password'])))
-        {
+        ]);
+
+         if(!Auth::attempt($request->only(['username','password'])))
+         {
             dd('failed');
-        }
+         }
         
+      
+
             return redirect()
-         ->route('dashboard');
+         ->route('stats');
         
     
     }
@@ -111,7 +119,16 @@ class PagesController extends Controller
 
      public function getStats()
     {
-        return view('pages.stats');
+      
+          if (Auth::user())
+            {
+            dd('here');
+             }
+
+          $username = 'ackmed';
+     
+
+        return view('pages.stats')->with('name', $username);
     }
 
     public function settings()
@@ -119,10 +136,6 @@ class PagesController extends Controller
         return view('pages.settings');
     }
 
-    public function test()
-    {
-        return redirect()->route('landingpage')->with('success','');
-    }
 
 
 

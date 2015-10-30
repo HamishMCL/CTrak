@@ -46,7 +46,7 @@ nav
 
 }
 
-.failed-alert
+.failed_alert
 {
 	width: 100%;
 	height: 50px;
@@ -55,7 +55,7 @@ nav
 	color: #FF3333;
 }
 
-.failed-alert p
+.failed_alert p
 {
 	padding: 15px;
 }

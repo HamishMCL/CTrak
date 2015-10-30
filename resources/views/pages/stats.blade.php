@@ -10,10 +10,14 @@
 @stop
  
 @section('content')
+
+
 	
 <div class="stats-container">
 
-<h1 >Stats</h1>
+
+<h1 >Stats </h1>
+<p>{{ $name }}</p>
 <hr >
 
 <div class="stats">

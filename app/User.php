@@ -16,4 +16,11 @@ class User extends Model implements AuthenticatableContract
     protected $fillable = ['username','password'];
 
     protected $hidded = ['password'];
+
+
+    public function getUsername()
+    {
+    		return  $this->username;
+    	
+    }
 }

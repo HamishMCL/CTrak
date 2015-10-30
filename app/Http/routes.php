@@ -3,7 +3,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes for the landing page, posting logins & getting the page
+| Routes for the landing page, posting logins & signins getting the page
 |--------------------------------------------------------------------------
 |
 */
@@ -12,15 +12,37 @@ Route::get('/', [
 	'uses' => 'PagesController@landingpage',
 	'as' => 'landingpage',
 	]);
-Route::post('/',[ 
+
+
+
+
+Route::get('/signUp',[ 
+	'uses' => 'PagesController@signUp',
+	'as' => 'signUp',
+	]);
+
+Route::post('/signUp',[ 
+	'uses' => 'PagesController@signUp',
+
+	]);
+
+
+Route::get('/signIn',[ 
+	'uses' => 'PagesController@signIn',
+	'as' => 'signIn',
+	]);
+
+Route::post('/signIn',[ 
 	'uses' => 'PagesController@signIn',
 	]);
+
 
 
 // Route::post('/landingpage/{id}',[ 
 // 	'uses' => 'PagesController@signIn',
 // 	'as' => 'test',
 // 	]);
+
 
 /*
 |--------------------------------------------------------------------------
