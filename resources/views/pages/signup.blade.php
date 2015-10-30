@@ -22,7 +22,7 @@
 
 @section('content')
 
-		<h1 style="padding: 20px; margin: auto; text-align: center; font-size: 50px; color:  ; font-family: 'Open Sans', sans-serif;">West side mother fucker.</h1>
+		<h1 style="padding: 20px; margin: auto; text-align: center; font-size: 50px; color:  ; font-family: 'Open Sans', sans-serif;">CTrakr.</h1>
 		<h1 style="padding: 20px; margin: auto; text-align: center; color: #35B0F2 ; font-family: 'Open Sans', sans-serif;">Sign Up</h1>
 
 		<form class="form-horizontal"  role="form" method="POST" action="{{ route('signUp') }}" style=" margin: auto;display: block; width: 50%;text-align: center;">
