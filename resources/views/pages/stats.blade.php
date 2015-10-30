@@ -17,7 +17,7 @@
 
 
 <h1 >Stats </h1>
-<p>{{ $name }}</p>
+
 <hr >
 
 <div class="stats">
