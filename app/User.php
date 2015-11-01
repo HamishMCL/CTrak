@@ -20,7 +20,12 @@ class User extends Model implements AuthenticatableContract
 
     public function getUsername()
     {
-    		return  $this->username;
-    	
+            return  $this->username;
+        
     }
-}
+
+
+
+    
+   
+} 

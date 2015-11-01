@@ -38,11 +38,6 @@ Route::post('/signIn',[
 
 
 
-// Route::post('/landingpage/{id}',[ 
-// 	'uses' => 'PagesController@signIn',
-// 	'as' => 'test',
-// 	]);
-
 
 /*
 |--------------------------------------------------------------------------

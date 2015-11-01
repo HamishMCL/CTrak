@@ -16,7 +16,8 @@
 <div class="stats-container">
 
 
-<h1 >Stats </h1>
+<h1 style="display: inline;" >Stats  </h1><h5 style="display: inline;">{{ $stats->username }} </h5>
+
 
 <hr >
 
@@ -30,30 +31,40 @@
 	<div class="sections" >
 		<h4 class="section-title">Runs</h4>
 
-		<h4 class="section-info"> 0</h4>
+		<h4 class="section-info">{{$stats->runs}} </h4>
 	</div>
 
 	<div class="sections">
 		<h4 class="section-title">Outs</h4>
 
-		<h4 class="section-info">0</h4>
+		<h4 class="section-info">{{$stats->outs}}</h4>
+	</div>
+		<div class="sections">
+		<h4 class="section-title">6s</h4>
+
+		<h4 class="section-info">{{$stats->sixes}}</h4>
+	</div>
+		<div class="sections">
+		<h4 class="section-title">4s</h4>
+
+		<h4 class="section-info">{{$stats->fours}}</h4>
 	</div>
 
 	<div class="sections">
 		<h4 class="section-title">Innings</h4>
 
-		<h4 class="section-info">0</h4>
+		<h4 class="section-info">{{ $stats->Innings }}</h4>
 	</div>
 
 	<div class="sections">
 		<h4 class="section-title">Average</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ round($stats->Average,2) }}</h4>
 	</div>
 	<div class="sections">
 		<h4 class="section-title">Highest Score</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ $stats->Highest_score }}</h4>
 	</div>
 
 
@@ -71,40 +82,36 @@
 		<div class="sections" >
 		<h4 class="section-title">Wickets</h4>
 
-		<h4 class="section-info"> 0</h4>
+		<h4 class="section-info"> {{ $stats->wickets }}</h4>
 	</div>
 
 	<div class="sections">
 		<h4 class="section-title">Overs</h4>
 
-		<h4 class="section-info">0</h4>
+		<h4 class="section-info">{{ $stats->overs }}</h4>
 	</div>
 
 	<div class="sections">
 		<h4 class="section-title">Runs Conceded</h4>
 
-		<h4 class="section-info">0</h4>
+		<h4 class="section-info">{{ $stats->runs_conceded }}</h4>
 	</div>
 
 	<div class="sections">
 		<h4 class="section-title">Maidens</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ $stats->maidens }}</h4>
 	</div>
-	<div class="sections">
-		<h4 class="section-title">Innings</h4>
 
-		<h4 class="section-info ">0</h4>
-	</div>
 	<div class="sections">
 		<h4 class="section-title">Economy</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ round($stats->economy,2) }}</h4>
 	</div>
 	<div class="sections">
 		<h4 class="section-title">Best Figures</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ $stats->best_figures }}</h4>
 	</div>
 
 </div>
@@ -118,12 +125,12 @@
 	<div class="sections">
 		<h4 class="section-title">Catches</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ $stats->catches }}</h4>
 	</div>
 	<div class="sections">
 		<h4 class="section-title">Run outs</h4>
 
-		<h4 class="section-info ">0</h4>
+		<h4 class="section-info ">{{ $stats->run_outs }}</h4>
 	</div>
 
 </div>

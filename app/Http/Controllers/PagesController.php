@@ -2,13 +2,14 @@
 
 namespace CTrak\Http\Controllers;
 
-use Validator;
+
 use Illuminate\Http\Request;
 use CTrak\Http\Requests;
 use CTrak\Http\Controllers\Controller;
 use CTrak\User;
 use Auth;
-
+use Validator;
+use DB;
 class PagesController extends Controller
 {
     /*
@@ -52,10 +53,7 @@ class PagesController extends Controller
          ->with('success','');
     }
 
-    public function test()
-    {
-        
-    }
+ 
 
     public function signIn(Request $request)
     {
@@ -64,17 +62,24 @@ class PagesController extends Controller
             'password' => 'required',
 
         ]);
+    
 
          if(!Auth::attempt($request->only(['username','password'])))
          {
-            dd('failed');
+             return redirect()
+         ->route('landingpage')
+         ->with('failed','');
          }
-        
-      
 
-            return redirect()
-         ->route('stats');
-        
+            if (Auth::check())
+            {
+                 $id = Auth::id();
+
+                   $stats = User::Find($id);
+
+                return  view('pages.stats', compact('stats'));
+            }
+         
     
     }
 /*
@@ -83,11 +88,6 @@ class PagesController extends Controller
 |--------------------------------------------------------------------------
 |
 */
-    public function dashboard() {
-
-        return view('pages.stats');
-    }
-
 
 /*
 |----------------------------------------------------------------------------
@@ -98,13 +98,111 @@ class PagesController extends Controller
 
     public function newinnings() {
 
+
         return view('pages.new-innings');
     }
 
 
-    public function storeNewInnings()
+    public function storeNewInnings(Request $request)
     {
-        return redirect()->route('stats')->with('success','Your stats have been updated!');
+     
+        if (Auth::check())
+            {
+                 $id = Auth::id();
+
+                 // Batting
+
+                $newruns = $request->input('runs');
+                $newouts = $request->input('outs');
+                $newsixes = $request->input('sixes');
+                $newfours = $request->input('fours');
+             
+            
+
+                // Bowling
+
+                $newwickets = $request->input('wickets');
+                $newovers = $request->input('overs');
+                $newruns_conceded = $request->input('runs_conceded');
+                $newmaidens = $request->input('maidens');
+                $newbest_figures = $request->input('runs');
+
+                // fielding
+
+                $newcatches = $request->input('catches');
+                $newrun_outs = $request->input('run_outs');
+         
+             
+
+
+
+                 $stats = User::Find($id);
+
+                 $runs = $stats->runs;
+                 $sixes = $stats->sixes;
+                 $fours = $stats->fours;
+                 $outs = $stats->outs;
+
+                 $wickets =$stats->wickets;
+                 $runs_conceded = $stats->runs_conceded;
+                 $overs = $stats->overs;
+                 $maidens = $stats->maidens;
+
+                 $catches = $stats->catches;
+                 $run_outs = $stats->run_outs;
+
+
+                 $updatedruns = $runs + $newruns;
+                 $updatedsixes = $sixes + $newsixes;
+                 $updatedfours = $fours + $newfours;
+                 $updatedouts = $outs + $newouts;
+
+                 $updatedwickets = $wickets + $newwickets;
+                 $updatedruns_conceded = $runs_conceded + $newruns_conceded;
+                 $updatedovers = $overs + $newovers;
+                 $updatedmaidens = $maidens + $newmaidens;
+
+                 $updatedcatches = $catches + $newcatches;
+                 $updatedrun_outs = $run_outs + $newrun_outs;
+
+
+                 $stats->runs =  $updatedruns;
+                 $stats->sixes = $updatedsixes;
+                 $stats->fours = $updatedfours;
+                 $stats->outs =  $updatedouts;
+
+                 if($updatedouts <= 0 )
+                 {
+                     $stats->Average = 0;
+                 }else
+                 {
+                    $stats->Average = $updatedruns / $updatedouts;
+                }
+                 $stats->innings += 1;
+
+                 $stats->wickets = $updatedwickets;
+                 $stats->runs_conceded = $updatedruns_conceded;
+                 $stats->overs = $updatedovers;
+                 $stats->maidens = $updatedmaidens;
+                 $stats->economy = $updatedruns_conceded / $updatedovers;
+
+
+                 if($newruns > $stats->Highest_score)
+                 {
+                    $stats->Highest_score = $newruns;
+                 }
+
+
+                 $stats->catches = $updatedcatches;
+                 $stats->run_outs = $updatedrun_outs;
+
+
+
+                $stats->save();
+
+                
+            }
+        return view('pages.stats',compact('stats'));
     }
 
 
@@ -117,27 +215,34 @@ class PagesController extends Controller
 */
 
 
-     public function getStats()
+     public function getStats(Request $request)
     {
       
-          if (Auth::user())
+
+             if (Auth::check())
             {
-            dd('here');
-             }
+                 $id = Auth::id();
+                $stats = User::Find($id);
 
-          $username = 'ackmed';
-     
+                
+            }
 
-        return view('pages.stats')->with('name', $username);
+        return view('pages.stats',compact('stats'));
     }
 
-    public function settings()
+
+
+    public function logOut(Request $request)
     {
-        return view('pages.settings');
+        Auth::logOut();
+        if(!Auth::check())
+        {
+            dd('still loged in');
+        }
+        Session::flush();
+
+        return view('landingpage');
     }
-
-
-
 
 
 
