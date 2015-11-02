@@ -21,13 +21,13 @@ class UsersTable extends Migration
             $table->integer('Innings');
             $table->integer('sixes');
             $table->integer('fours');
-            $table->integer('Average');
+            $table->float('Average');
             $table->integer('Highest_score');
             $table->integer('wickets');
             $table->integer('overs');
             $table->integer('runs_conceded');
             $table->integer('maidens');
-            $table->integer('economy');
+            $table->float('economy');
             $table->string('best_figures');
             $table->integer('catches');
             $table->integer('run_outs');

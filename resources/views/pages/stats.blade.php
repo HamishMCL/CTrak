@@ -1,7 +1,7 @@
 @extends('landing_page')
 
 @section('nav')
-<h2 style="margin: 0px; padding: 5px; display: inline-block; text-align: center; ;padding: 15px;">CTrak</h2>
+<h2 style="margin: 0px; padding: 5px; display: inline-block; text-align: center; ;padding: 15px;">CTrakr </h2>
 		<ul>
 			<li><a href="{{ route('stats') }}">Your Stats</a></li>
 			<li><a href="{{ route('new-innings') }}">New Innings</a></li>
@@ -16,10 +16,10 @@
 <div class="stats-container">
 
 
-<h1 style="display: inline;" >Stats  </h1><h5 style="display: inline;">{{ $stats->username }} </h5>
+<h1 style="display: block; text-align:center; font-size: 40px; " >Stats  </h1>
 
 
-<hr >
+
 
 <div class="stats">
 
@@ -88,7 +88,7 @@
 	<div class="sections">
 		<h4 class="section-title">Overs</h4>
 
-		<h4 class="section-info">{{ $stats->overs }}</h4>
+		<h4 class="section-info">{{ round($stats->overs,3) }}</h4>
 	</div>
 
 	<div class="sections">
@@ -108,10 +108,18 @@
 
 		<h4 class="section-info ">{{ round($stats->economy,2) }}</h4>
 	</div>
+
+	<div class="sections">
+		<h4 class="section-title">Strike Rate</h4>
+
+		<h4 class="section-info ">{{ $stats->overs * 6 / $stats->wickets}}</h4>
+	</div>
+
+
 	<div class="sections">
 		<h4 class="section-title">Best Figures</h4>
 
-		<h4 class="section-info ">{{ $stats->best_figures }}</h4>
+		<h4 class="section-info ">{{ $stats->wickets }} / {{$stats->runs_conceded}}</h4>
 	</div>
 
 </div>

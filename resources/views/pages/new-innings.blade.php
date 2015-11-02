@@ -1,6 +1,6 @@
 @extends('landing_page')
 @section('nav')
-	<h2 style="margin: 0px; padding: 5px; display: inline-block; text-align: center; color: #484848;padding: 15px;">CTrak</h2>
+	<h2 style="margin: 0px; padding: 5px; display: inline-block; text-align: center; color: #484848;padding: 15px;">CTrakr</h2>
 		<ul>
 			<li><a href="{{ route('stats') }}">Your stats</a></li>
 			<li><a href="{{ route('new-innings') }}">New Innings</a></li>

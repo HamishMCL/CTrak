@@ -131,8 +131,6 @@ class PagesController extends Controller
 
                 $newcatches = $request->input('catches');
                 $newrun_outs = $request->input('run_outs');
-         
-             
 
 
 
@@ -178,13 +176,14 @@ class PagesController extends Controller
                  {
                     $stats->Average = $updatedruns / $updatedouts;
                 }
-                 $stats->innings += 1;
+                 $stats->innings + 1;
 
                  $stats->wickets = $updatedwickets;
                  $stats->runs_conceded = $updatedruns_conceded;
                  $stats->overs = $updatedovers;
                  $stats->maidens = $updatedmaidens;
-                 $stats->economy = $updatedruns_conceded / $updatedovers;
+                 $stats->economy =   $updatedruns_conceded / $updatedovers ;
+
 
 
                  if($newruns > $stats->Highest_score)

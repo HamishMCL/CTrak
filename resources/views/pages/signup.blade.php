@@ -28,18 +28,18 @@
 		<form class="form-horizontal"  role="form" method="POST" action="{{ route('signUp') }}" style=" margin: auto;display: block; width: 50%;text-align: center;">
 
 			  <div class="form-group" style=" display: block;"> 
-			 	 <label class="control-label"  style="padding:0px;margin:0px;" for="textinput" >Username:</label>  
+			 	 <p>Username</p>
 			  	<input id="textinput" style="padding:0px;margin:0px;" name="username" type="text" value="{{ old('username')}}" class="form-control input-md">
 			    	@if($errors->has('username')) <p style="color:red;">{{  $errors->first('username') }}</p> @endif
 			  </div>
 
 			   <div class="form-group" style=" display: block;"> 
-			 	 <label class="control-label"  style="padding:0px;margin:0px;" for="textinput">Password:</label>  
+			 	 <p>Password</p>
 			  	<input id="textinput" style="padding:0px;margin:0px;" name="password" type="password" class="form-control input-md">
 			  	@if($errors->has('password')) <p style="color:red;">{{  $errors->first('password') }}</p> @endif
 			  </div>
 
-			   <button  id="signin_btn"type="submit" class="btn btn-primary" name="signUp"><p>Sign up</p></button>
+			   <button  id="signin_btn"type="submit" style="font-family: 'Open Sans', sans-serif"class="btn btn-primary" name="signUp">Sign up</button>
 			   <input type="hidden" name="_token" value="{{Session::token() }}"></input>
 		</form>
 @stop
