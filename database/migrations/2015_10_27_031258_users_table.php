@@ -25,12 +25,14 @@ class UsersTable extends Migration
             $table->integer('Highest_score');
             $table->integer('wickets');
             $table->integer('overs');
+            $table->float('strike_rate');
             $table->integer('runs_conceded');
             $table->integer('maidens');
             $table->float('economy');
-            $table->string('best_figures');
             $table->integer('catches');
             $table->integer('run_outs');
+            $table->integer('highest_wickets');
+            $table->integer('lastest_runs');
             $table->timestamps();
 
         });

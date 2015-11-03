@@ -117,7 +117,7 @@ class PagesController extends Controller
                 $newsixes = $request->input('sixes');
                 $newfours = $request->input('fours');
              
-            
+            dd($newruns, $newouts, $newsixes, $newfours);
 
                 // Bowling
 
@@ -132,6 +132,9 @@ class PagesController extends Controller
                 $newcatches = $request->input('catches');
                 $newrun_outs = $request->input('run_outs');
 
+                $newhighestwicket =$request->input('wickets');
+                $newlastestruns = $request->input('runs_conceded');
+  
 
 
                  $stats = User::Find($id);
@@ -149,6 +152,24 @@ class PagesController extends Controller
                  $catches = $stats->catches;
                  $run_outs = $stats->run_outs;
 
+                 $highest_wickets = $stats->highest_wickets;
+                 $lastest_runs = $stats->lastest_runs;
+                 $innings = $stats->Innings;
+
+
+
+                 if($newhighestwicket > $highest_wickets)
+                 {
+                    $stats->highest_wickets = $newhighestwicket;
+                    $stats->lastest_runs = $newlastestruns;
+                 }
+                 else if($newhighestwicket == $highest_wickets )
+                 {
+                    if( $newlastestruns < $lastest_runs)
+                    {
+                        $stats->lastest_runs = $newlastestruns;
+                    }
+                 }
 
                  $updatedruns = $runs + $newruns;
                  $updatedsixes = $sixes + $newsixes;
@@ -163,6 +184,8 @@ class PagesController extends Controller
                  $updatedcatches = $catches + $newcatches;
                  $updatedrun_outs = $run_outs + $newrun_outs;
 
+                 $updated_innings = $innings + 1 ;
+
 
                  $stats->runs =  $updatedruns;
                  $stats->sixes = $updatedsixes;
@@ -176,14 +199,33 @@ class PagesController extends Controller
                  {
                     $stats->Average = $updatedruns / $updatedouts;
                 }
-                 $stats->innings + 1;
 
+
+
+                 $stats->Innings = $updated_innings;
                  $stats->wickets = $updatedwickets;
                  $stats->runs_conceded = $updatedruns_conceded;
                  $stats->overs = $updatedovers;
                  $stats->maidens = $updatedmaidens;
-                 $stats->economy =   $updatedruns_conceded / $updatedovers ;
 
+                 if($updatedovers <= 0)
+                 {
+                    
+
+                 }
+                 else
+                 {
+                     $stats->economy =  $updatedruns_conceded /  $updatedovers;
+                 }
+
+                 if($updatedruns_conceded <=0)
+                 {
+
+                 }
+                 else
+                 {
+                    $stats->strike_rate = $updatedovers * 6 / $updatedwickets;
+                 }
 
 
                  if($newruns > $stats->Highest_score)

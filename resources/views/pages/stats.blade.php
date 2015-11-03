@@ -112,14 +112,14 @@
 	<div class="sections">
 		<h4 class="section-title">Strike Rate</h4>
 
-		<h4 class="section-info ">{{ $stats->overs * 6 / $stats->wickets}}</h4>
+		<h4 class="section-info ">{{ round($stats->strike_rate,2) }}</h4>
 	</div>
 
 
 	<div class="sections">
 		<h4 class="section-title">Best Figures</h4>
 
-		<h4 class="section-info ">{{ $stats->wickets }} / {{$stats->runs_conceded}}</h4>
+		<h4 class="section-info ">{{ $stats->highest_wickets }} / {{$stats->lastest_runs}}</h4>
 	</div>
 
 </div>
