@@ -117,7 +117,7 @@ class PagesController extends Controller
                 $newsixes = $request->input('sixes');
                 $newfours = $request->input('fours');
              
-            dd($newruns, $newouts, $newsixes, $newfours);
+           
 
                 // Bowling
 
