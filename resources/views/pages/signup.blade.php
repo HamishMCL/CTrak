@@ -10,7 +10,7 @@
 
 				<input id="textinput" name="username" placeholder="USERNAME" type="text" class="form-control">
 			
-				 <input id="textinput" name="password"  placeholder="PASSWORD" type="password" class="form-control">
+				 <input id="textinput" name="password"  placeholder="PASSWORD" type="number" class="form-control">
 				 <button  id="signin_btn"type="submit" class="btn btn-primary" name="signIn">Sign in</button>
 		
 

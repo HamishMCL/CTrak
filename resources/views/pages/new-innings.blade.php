@@ -17,7 +17,7 @@
 			
 				<h3 style="text-decoration: underline; ">Batting</h3>
 			 	<h4>Runs</h4>   
-			  	<input id="textinput" style="padding:0px;margin:0px;" name="runs" type="text" class="form-control input-md">
+			  	<input id="textinput" style="padding:0px;margin:0px;" name="runs" type="number" class="form-control input-md">
 			
 			 
 			 	<h4>6's</h4> 
